@@ -37,7 +37,7 @@ app.UseSwaggerUI(c =>
 
 app.UseAuthorization();
 
-app.UseCors("AllowOnlySpecificOriginAndMethods");
+app.UseCors("AllowAll");
 
 app.MapControllers();
 

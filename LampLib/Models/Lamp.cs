@@ -18,5 +18,13 @@ namespace LampLib.Models
         public string DeviceName { get; set; }
         [Column("TurnedON", TypeName = "datetime")]
         public DateTime TurnedOn { get; set; }
+        public int Watt { get; set; }
+        public int TurnOnDuration { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string City { get; set; }
+        [Required]
+        [StringLength(50)]
+        public string Country { get; set; }
     }
 }
