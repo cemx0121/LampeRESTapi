@@ -1,5 +1,6 @@
 ﻿using LampeRESTapi.Managers;
 using LampLib.Models;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -15,6 +16,7 @@ namespace LampeRESTapi.Controllers
 
         // GET: api/<LampsController>
         [HttpGet]
+        [EnableCors("AllowAll")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetAll()
@@ -32,6 +34,7 @@ namespace LampeRESTapi.Controllers
 
         // GET: api/<LampsController>
         [HttpGet]
+        [EnableCors("AllowAll")]
         [Route("SearchLampInfoByDevicename/{deviceName}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -50,6 +53,7 @@ namespace LampeRESTapi.Controllers
 
         // POST api/<LampsController>
         [HttpPost]
+        [EnableCors("AllowAll")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status406NotAcceptable)]
         public Lamp Post([FromBody] Lamp lamp)

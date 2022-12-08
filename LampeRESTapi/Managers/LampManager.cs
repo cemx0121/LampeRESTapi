@@ -34,7 +34,7 @@ namespace LampeRESTapi.Managers
             }
             else
             {
-                return _dbContext.Lamps.ToList().FindAll(d => d.DeviceName.ToLower().Contains(deviceName.ToLower()));
+                return _dbContext.Lamps.ToList().FindAll(d => d.DeviceName == deviceName);
             }
         }
     }
